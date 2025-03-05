@@ -16,8 +16,8 @@
 
 typedef enum
 {
-    NO_TIMESTAMP = 0,
-    WITH_TIMESTAMP = 1
+    NONE = 0,  // none
+    WITH_TIMESTAMP = 1 // with timestamp
 } eTimestamp;
 
 

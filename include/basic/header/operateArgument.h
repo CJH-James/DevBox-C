@@ -3,9 +3,12 @@
 
 #include <stdbool.h>
 
+
+
+#define _ARGUMENT_ELEMENT_CNT 3 // 
+
 /**
  * @brief The structure define the arguments
- * 
  */
 typedef struct _argument sArgument;
 struct _argument
@@ -17,11 +20,14 @@ struct _argument
     sArgument* next_argv; // The pointer to next argument structure 
 }; 
 
-/**
- * @brief The structure define the arguments
- * 
- * @param argument The structure of the argument
- */
-void printArgument(sArgument argument);
+
+void printArgument(sArgument *psArgList);
+
+sArgument* initialArgument();
+
+void addArgument(sArgument** head, sArgument* newArg);
+
+void freeArguments(sArgument *head);
+
 
 #endif /* _OPERATE_ARGUMENT_H_ */
