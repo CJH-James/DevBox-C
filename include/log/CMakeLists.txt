@@ -5,10 +5,10 @@ project (Lib_Log)
 ########################
 
 # File for Libary
-file(GLOB LOG ${CMAKE_CURRENT_SOURCE_DIR}/src/*.c)
+file(GLOB FILE ${CMAKE_CURRENT_SOURCE_DIR}/src/*.c)
 
 ### Static Libary ###
-add_library(static_log STATIC ${LOG})
+add_library(static_log STATIC ${FILE})
 
 target_include_directories(static_log 
     PUBLIC 
@@ -20,7 +20,7 @@ set_target_properties(static_log PROPERTIES OUTPUT_NAME "log")
 set_target_properties(static_log PROPERTIES SUFFIX ".a")
 
 ### Dynamic Library ###
-add_library(dynamic_log SHARED ${LOG})
+add_library(dynamic_log SHARED ${FILE})
 
 target_include_directories(dynamic_log 
     PUBLIC 
