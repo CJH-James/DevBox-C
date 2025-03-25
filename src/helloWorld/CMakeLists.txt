@@ -14,7 +14,6 @@ add_executable(hello_static ${SOURCES})
 # link to static Libary
 target_link_libraries(hello_static
     PRIVATE
-        static_basic
         static_log
 )
 
@@ -25,7 +24,6 @@ add_executable(hello_dynamic ${SOURCES})
 # link to dynamic Libary
 target_link_libraries(hello_dynamic
     PRIVATE
-        dynamic_basic
         dynamic_log
 )
 
