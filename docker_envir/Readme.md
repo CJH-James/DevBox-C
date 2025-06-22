@@ -93,3 +93,29 @@ solution:
     sudo usermod -aG docker $USER
     reboot
 ```
+
+2. Docker service not start
+
+```bash
+ERROR: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+```
+
+solution:
+```bash
+    sudo service docker start
+```
+
+Some issue when you using `WSL2`
+```
+$ sudo service docker start
+/etc/init.d/docker: 62: ulimit: error setting limit (Invalid argument)
+```
+solution:
+```bash
+sudo vim /etc/init.d/docker
+--- Remove the "H" ---
+change the line : ulimit -Hn 524288
+become          : ulimit -n 524288
+
+```
+
