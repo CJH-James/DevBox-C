@@ -2,7 +2,6 @@
 
 The docker files can help you setup the build environment, please check the `docker_envir`
 
-
 ```shell
 ### CMake 3.13+ ###
 # Create the build scripts and store into the target folder "build"
@@ -62,14 +61,3 @@ make
   │   └── helloWorld
   └── tools
   ```
-
-## Develop
-
-Note:Use the docker files in the `docker_envir` can help you create dev environment quickly
-
-- Commit template
-
-```shell 
-  git config commit.template ./.gitmessage
-```
-
