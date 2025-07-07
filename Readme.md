@@ -1,6 +1,6 @@
 ## Build this project
 
-The docker files can help you setup the build environment, please check the `docker_envir`
+The docker files can help you setup the build environment, please check the [docker_envir](https://github.com/CJH-James/DevBox-C/tree/master/docker_envir)
 
 ```shell
 ### CMake 3.13+ ###
@@ -48,14 +48,11 @@ make
   │       ├── hello_static
   │       └── lib
   │           ├── dynamic
-  │           │   ├── libbasic.so
   │           │   └── liblog.so
   │           └── static
-  │               ├── libbasic.a
   │               └── liblog.a
   ├── docker_envir
   ├── include
-  │   ├── basic
   │   └── log
   ├── src
   │   └── helloWorld

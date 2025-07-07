@@ -15,7 +15,6 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/output/lib/dynamic) # dyn
 # Build the lib  #
 ##################
 set (LIB_PATH "include")
-add_subdirectory(${LIB_PATH}/basic)
 add_subdirectory(${LIB_PATH}/log)
 
 ######################
