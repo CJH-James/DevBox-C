@@ -1,9 +1,9 @@
 # Start with the GCC base image
-FROM gcc:14.2.0
+FROM gcc:14.3.0
 
 # Add metadata about the image
 LABEL maintainer="CJH-James <qaz75203code@gmail.com>"
-LABEL description="Minimal Docker image for C development with GCC-14.2.0 and CMake-3.31.3."
+LABEL description="Minimal Docker image for C development with GCC-14.3.0 and CMake-3.31.12."
 
 # ARG to specify platform during build
 ARG TARGETPLATFORM
@@ -29,10 +29,10 @@ RUN apt-get update && \
 # Install CMake using precompiled binaries
 RUN case "$TARGETPLATFORM" in \
     "linux/amd64") \
-        wget https://github.com/Kitware/CMake/releases/download/v3.31.3/cmake-3.31.3-linux-x86_64.sh -O /tmp/cmake.sh; \
+        wget https://github.com/Kitware/CMake/releases/download/v3.31.12/cmake-3.31.12-linux-x86_64.sh -O /tmp/cmake.sh; \
         ;; \
     "linux/arm64") \
-        wget https://github.com/Kitware/CMake/releases/download/v3.31.3/cmake-3.31.3-linux-aarch64.sh -O /tmp/cmake.sh; \
+        wget https://github.com/Kitware/CMake/releases/download/v3.31.12/cmake-3.31.12-linux-aarch64.sh -O /tmp/cmake.sh; \
         ;; \
     *) \
         echo "Unsupported platform: $TARGETPLATFORM"; \
