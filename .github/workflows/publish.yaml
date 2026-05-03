@@ -26,6 +26,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
+      # Convert repo name to lowercase and save into environment parameter
+      - name: lowercase repo name
+        run: |
+          echo "IMAGE_NAME=${GITHUB_REPOSITORY@L}" >> ${GITHUB_ENV}
 
       # setup QEMU for raspberry pi
       - name: Set up QEMU
@@ -52,4 +57,4 @@ jobs:
           build-args: |
             INSTALL_DEBUG=${{ matrix.debug_flag }}
           tags: |
-            ghcr.io/${{ github.repository }}:${{ github.ref_name }}-${{ matrix.variant }}
+            ghcr.io/${{ env.IMAGE_NAME }}:${{ github.ref_name }}-${{ matrix.variant }}
