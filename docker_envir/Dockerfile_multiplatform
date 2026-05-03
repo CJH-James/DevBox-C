@@ -13,6 +13,7 @@ ARG USER_NAME
 ARG USER_ID
 ARG GROUP_ID
 ARG WORKDIR
+ARG INSTALL_DEBUG=false
 
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
@@ -25,6 +26,13 @@ RUN apt-get update && \
         ca-certificates \
         sudo && \
     rm -rf /var/lib/apt/lists/*
+
+# Install Debug tools
+RUN if [ "$INSTALL_DEBUG" = "true" ]; then \
+    apt-get update && apt-get install -y --no-install-recommends \
+    gdb gdbserver valgrind && \
+    rm -rf /var/lib/apt/lists/*; \
+    fi
 
 # Install CMake using precompiled binaries
 RUN case "$TARGETPLATFORM" in \

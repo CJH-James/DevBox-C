@@ -36,6 +36,7 @@
                         --build-arg USER_ID=$(id -u) \
                         --build-arg GROUP_ID=$(id -g) \
                         --build-arg WORKDIR=$(pwd) \
+                        --build-arg INSTALL_DEBUG=true \
                         --load
 
     #  --platform PLATFORM        PLATFORM options {linux/arm64, linux/amd64}
