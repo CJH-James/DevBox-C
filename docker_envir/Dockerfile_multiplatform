@@ -6,13 +6,14 @@ LABEL maintainer="CJH-James <qaz75203code@gmail.com>"
 LABEL description="Minimal Docker image for C development with GCC-14.3.0 and CMake-3.31.12."
 
 # ARG to specify platform during build
+# p.s. Do NOT give the default value, or it will build fail
 ARG TARGETPLATFORM
 
 # ARG for the user permission
-ARG USER_NAME
-ARG USER_ID
-ARG GROUP_ID
-ARG WORKDIR
+ARG USER_NAME=developer
+ARG USER_ID=1000
+ARG GROUP_ID=1000
+ARG WORKDIR=/workspace
 ARG INSTALL_DEBUG=false
 
 # Set environment variables
